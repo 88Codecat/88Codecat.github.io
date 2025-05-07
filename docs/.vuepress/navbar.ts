@@ -2,9 +2,9 @@ import { navbar } from 'vuepress-theme-hope';
 
 export default navbar([
 	{
-		text: '通关指南',
-		link: '/js/',
-		target: '_self'
+		text: 'js通关指南',
+		prefix: '/js/',
+		link: '/js/'
 	},
 	{
 		text: 'React',

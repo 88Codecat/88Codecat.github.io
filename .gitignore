@@ -6,5 +6,4 @@
 .vuepress/dist
 
 node_modules
-test.js
 dist
