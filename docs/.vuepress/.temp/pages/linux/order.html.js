@@ -1,5 +1,5 @@
-import comp from "D:/MyBlog/docs/.vuepress/.temp/pages/js/number.html.vue"
-const data = JSON.parse("{\"path\":\"/js/number.html\",\"title\":\"字符串类型\",\"lang\":\"zh-CN\",\"frontmatter\":{},\"readingTime\":{\"minutes\":0.02,\"words\":5},\"filePathRelative\":\"js/number.md\"}")
+import comp from "D:/MyBlog/docs/.vuepress/.temp/pages/linux/order.html.vue"
+const data = JSON.parse("{\"path\":\"/linux/order.html\",\"title\":\"Ubuntu常用命令\",\"lang\":\"zh-CN\",\"frontmatter\":{},\"readingTime\":{\"minutes\":3.57,\"words\":1070},\"filePathRelative\":\"linux/order.md\"}")
 export { comp, data }
 
 if (import.meta.webpackHot) {

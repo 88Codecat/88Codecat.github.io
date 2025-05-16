@@ -8,7 +8,26 @@ export const routes = Object.fromEntries([
   ["/js/", { loader: () => import(/* webpackChunkName: "js_index.html" */"D:/MyBlog/docs/.vuepress/.temp/pages/js/index.html.js"), meta: {"title":"JS首页"} }],
   ["/js/string.html", { loader: () => import(/* webpackChunkName: "js_string.html" */"D:/MyBlog/docs/.vuepress/.temp/pages/js/string.html.js"), meta: {"title":"数字类型"} }],
   ["/js/type.html", { loader: () => import(/* webpackChunkName: "js_type.html" */"D:/MyBlog/docs/.vuepress/.temp/pages/js/type.html.js"), meta: {"title":"基本类型"} }],
+  ["/linux/order.html", { loader: () => import(/* webpackChunkName: "linux_order.html" */"D:/MyBlog/docs/.vuepress/.temp/pages/linux/order.html.js"), meta: {"title":"Ubuntu常用命令"} }],
+  ["/linux/", { loader: () => import(/* webpackChunkName: "linux_index.html" */"D:/MyBlog/docs/.vuepress/.temp/pages/linux/index.html.js"), meta: {"title":"Linux学习"} }],
   ["/network/", { loader: () => import(/* webpackChunkName: "network_index.html" */"D:/MyBlog/docs/.vuepress/.temp/pages/network/index.html.js"), meta: {"title":""} }],
   ["/react/", { loader: () => import(/* webpackChunkName: "react_index.html" */"D:/MyBlog/docs/.vuepress/.temp/pages/react/index.html.js"), meta: {"title":"react"} }],
   ["/404.html", { loader: () => import(/* webpackChunkName: "404.html" */"D:/MyBlog/docs/.vuepress/.temp/pages/404.html.js"), meta: {"title":""} }],
 ]);
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updateRoutes) {
+    __VUE_HMR_RUNTIME__.updateRoutes(routes)
+  }
+  if (__VUE_HMR_RUNTIME__.updateRedirects) {
+    __VUE_HMR_RUNTIME__.updateRedirects(redirects)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ routes, redirects }) => {
+    __VUE_HMR_RUNTIME__.updateRoutes(routes)
+    __VUE_HMR_RUNTIME__.updateRedirects(redirects)
+  })
+}

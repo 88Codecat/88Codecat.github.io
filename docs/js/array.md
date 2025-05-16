@@ -94,3 +94,125 @@ alert( fruits.at(-1) ); // Plum
 
 -   如果 `i >= 0`，则与 `arr[i]` 完全相同。
 -   对于 `i` 为负数的情况，它则从数组的尾部向前数。
+
+## pop/push shift/unshift 方法
+
+栈：最后放进去的内容是最先接收的，后进先出法则 LIFO（Last-In-First-Out）。
+
+队列：先进先出FIFO（First-In-First-Out）。
+
+JavaScript 中的数组既可以用作队列，也可以用作栈。它们允许你从首端/末端来添加/删除元素。
+
+-   `pop`
+
+    取出并返回数组的最后一个元素：
+
+    ```js
+    let fruits = ["Apple", "Orange", "Pear"];
+
+    alert( fruits.pop() ); // 移除 "Pear" 然后 alert 显示出来
+
+    alert( fruits ); // Apple, Orange
+    ```
+
+    `fruits.pop()` 和 `fruits.at(-1)` 都返回数组的最后一个元素，但 `fruits.pop()` 同时也删除了数组的最后一个元素，进而修改了原数组。
+
+-   `push`
+
+    在数组末端添加元素：
+
+
+    ```js
+    let fruits = ["Apple", "Orange"];
+
+    fruits.push("Pear");
+
+    alert( fruits ); // Apple, Orange, Pear
+    ```
+
+    调用 `fruits.push(...)` 与 `fruits[fruits.length] = ...` 是一样的。
+
+**作用于数组首端的方法：**
+
+-   `shift`
+
+    取出数组的第一个元素并返回它：
+
+    ```js
+    let fruits = ["Apple", "Orange", "Pear"];
+
+    alert( fruits.shift() ); // 移除 Apple 然后 alert 显示出来
+
+    alert( fruits ); // Orange, Pear
+    ```
+
+-   `unshift`
+
+    在数组的首端添加元素：
+
+    ```js
+    let fruits = ["Orange", "Pear"];
+
+    fruits.unshift('Apple');
+
+    alert( fruits ); // Apple, Orange, Pear
+    ```
+
+`push` 和 `unshift` 方法都可以一次添加多个元素：
+
+```js
+let fruits = ["Apple"];
+
+fruits.push("Orange", "Peach");
+fruits.unshift("Pineapple", "Lemon");
+
+// ["Pineapple", "Lemon", "Apple", "Orange", "Peach"]
+alert( fruits );
+```
+## 数组是一种特殊的对象*
+
+数组是一种特殊的对象。使用方括号来访问属性 `arr[0]` 实际上是来自于对象的语法。它其实与 `obj[key]` 相同，其中 `arr` 是对象，而数字用作键（key）。
+
+这种特殊的对象（数组）扩展了对象，提供了特殊的方法来处理有序的数据集合以及 `length` 属性。本质上仍然是一个对象。
+
+因此其行为也像一个对象。
+
+通过引用来复制
+
+```js
+let fruits = ["Banana"]
+
+let arr = fruits; // 通过引用复制 (两个变量引用的是相同的数组)
+
+alert( arr === fruits ); // true
+
+arr.push("Pear"); // 通过引用修改数组
+
+alert( fruits ); // Banana, Pear — 现在有 2 项了
+```
+
+数组真正特殊的是内部实现。JavaScript 引擎把这些元素存储在连续的内存区域，还有一些其它的优化，以使数组运行得非常快。
+
+所以如果我们不像“有序集合”那样使用数组，而是像常规对象那样使用数组，这些就都不生效了。
+
+比如，我们这样做
+
+```js
+let fruits = []; // 创建一个数组
+
+fruits[99999] = 5; // 分配索引远大于数组长度的属性
+
+fruits.age = 25; // 创建一个具有任意名称的属性
+```
+
+这是可以的，因为数组是基于对象的。我们可以给它们添加任何属性。
+
+但是 Javascript 引擎会发现，像使用常规对象一样使用数组，针对数组的优化就不再适用了，然后对应的优化就会被关闭，这些优化所带来的优势也就荡然无存了。
+
+数组误用的几种方式:
+
+-   添加一个非数字的属性，比如 `arr.test = 5`。
+-   制造空洞，比如：添加 `arr[0]`，然后添加 `arr[1000]` (它们中间什么都没有)。
+-   以倒序填充数组，比如 `arr[1000]`，`arr[999]` 等等。
+
+将数组视为作用于 **有序数据** 的特殊结构。为数组提供了特殊的方法。数组在 JavaScript 引擎内部是经过特殊调整的，使得更好地作用于连续的有序数据，所以请以正确的方式使用数组。如果需要任意键值，使用常规对象 `{}`。

@@ -14,5 +14,9 @@ export default sidebar({
 			collapsible: true
 		},
 	],
+	'/linux':[
+		'',
+		'order'
+	]
 
 })
