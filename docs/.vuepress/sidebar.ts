@@ -1,20 +1,13 @@
 import { sidebar } from 'vuepress-theme-hope';
+import js from './js-sidebar';
 
 export default sidebar({
-	'/js/': [
+	'/js/': js,
+	'/git/': [
 		'',
-		{
-			text: '数据类型',
-			children: ['type','number','string','array'],
-			collapsible: true
-		},
-		{
-			text: '其他',
-			children: ['1'],
-			collapsible: true
-		},
+		'1'
 	],
-	'/linux':[
+	'/linux': [
 		'',
 		'order'
 	]

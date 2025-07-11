@@ -1,0 +1,16 @@
+import comp from "D:/MyBlog/docs/.vuepress/.temp/pages/js/js-base/array/READEME.html.vue"
+const data = JSON.parse("{\"path\":\"/js/js-base/array/READEME.html\",\"title\":\"数组READEME\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"数组READEME\"},\"readingTime\":{\"minutes\":0.01,\"words\":4},\"filePathRelative\":\"js/js-base/array/READEME.md\"}")
+export { comp, data }
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

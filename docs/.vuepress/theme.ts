@@ -4,7 +4,6 @@ import sidebar from './sidebar.js';
 
 export default hopeTheme(
 	{
-		pure: true,
 		logo: 'assets/image/logo.png',
 		favicon: 'assets/image/favicon.ico',
 		navbar,

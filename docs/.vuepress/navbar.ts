@@ -7,6 +7,11 @@ export default navbar([
 		link: '/js/'
 	},
 	{
+		text: 'git',
+		prefix: '/git/',
+		link: '/git/'
+	},
+	{
 		text: 'React',
 		prefix: '/react/',
 		link: '/react/'
@@ -20,5 +25,10 @@ export default navbar([
 		text:'Linux',
 		prefix:'/linux/',
 		link:'/linux/'
+	},
+		{
+		text: 'nodejs',
+		prefix: '/nodejs/',
+		link: '/nodejs/'
 	}
 ])
