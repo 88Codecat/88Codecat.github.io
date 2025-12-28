@@ -26,9 +26,14 @@ export default navbar([
 		prefix:'/linux/',
 		link:'/linux/'
 	},
-		{
+	{
 		text: 'nodejs',
 		prefix: '/nodejs/',
 		link: '/nodejs/'
+	},
+	{
+		text: '简历',
+		prefix: '/resume/',
+		link: '/resume/'
 	}
 ])
