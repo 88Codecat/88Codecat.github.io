@@ -11,6 +11,7 @@ export default sidebar({
 		'',
 		'order'
 	],
-	'/nodejs': "structure"
+	'/nodejs': "structure",
+	'resume': "structure",
 
 })
