@@ -1,3 +1,4 @@
 # 简历
 
-![resuem](./resume.pdf)
+
+![resuem](IMG_3653.png)
